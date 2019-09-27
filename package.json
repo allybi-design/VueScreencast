@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "server": "json-server --port 3000 --watch videos.json",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.1.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
+    "vue-video-player": "^5.0.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -35,12 +38,17 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/strongly-recommended",
       "@vue/prettier"
     ],
-    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
+    },
+    "plugins": [
+      "vue"
+    ],
+    "rules": {
+      "no-console": "off"
     }
   },
   "postcss": {
